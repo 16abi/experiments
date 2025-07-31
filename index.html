@@ -4,11 +4,40 @@
         <meta charset="UTF-8"/>
         <title>My Projects</title>
     </head>
-    <body>
+    <body style="background-color:rgb(104, 133, 219);">
         <h1>My Projects Links</h1>
         <ul>
             <li><a href="./calculator/calculator.html">Calculator Demo</a></li>
             <li><a href="./obsidian/obsi.html">Obsidian website</a></li>
         </ul>
+        <script>
+            let username = prompt("Enter your name:");
+            let score=0;
+            let q1 = prompt("Q1:I am a color you can eat. What am I?\n" +  "A)Yellow\n" + "B)Green\n" + "C)Red\n" + "D)Orange\n" + "(choose the option)");
+            if (q1 == "D")
+              { alert("correct!");
+                score++;
+              }
+            else {
+                alert("You selected " + q1 + ", but the correct answer is D.");
+            }
+            let q2 = prompt("Q2: I'm tall when I'm young, and I'm short when I'm old. What am I?\n" + "A)Candle\n" + "B)Human\n" + "C)Tree\n" + "D)Plant\n");
+            if (q2 == "A")
+            { alert( "correct!");
+              score++;
+            }
+            else {
+                alert( "You selected " + q2 + ", but the correct answer is A.");
+            }
+            let q3 = prompt("Q3: What has to be broken before you can use it?\n" + "A)Mirror\n" + "B)Egg\n" + "C)Lock\n" + "D)Phone\n");
+            if ( q3 == "B")
+            { alert("correct!");
+                score++;
+            }
+            else {
+                alert("You selected " + q3 + ", but the correct answer is B.");
+            }
+            alert("Hi " + username + ", your total score is " + score + " out of 3.")
+        </script>
     </body>
 </html>
