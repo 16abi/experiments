@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="calculator.css">
     </head>
     <body>
-           <div class="calculator">
+           <div class="calculator" id="calculator">
                 <div class="mic">
                     <img src="mic.png" width="40px">
                 </div>
@@ -33,5 +33,21 @@
             <div class="cal__button"><button  class="oper">=</button></div>
             </div>
             </div>
+            <div id="footnote">sorry,out of order</div>
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                  let totalClicks = 0;
+                  const calculatorElement = document.getElementById("calculator");
+                  const footnoteElement = document.getElementById("footnote");
+                  calculatorElement.addEventListener("click", function() {
+                    totalClicks++;
+                    if(totalClicks == 1) {
+                        footnoteElement.innerText = "even if you click this it's still out of order";
+                    } else {
+                        footnoteElement.innerText = "even if you click " + totalClicks + "times, out of order is still out of order";
+                    }
+                  });
+                });
+            </script>
     </body>
 </html>
