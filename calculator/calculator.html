@@ -11,43 +11,50 @@
                 <div class="mic">
                     <img src="mic.png" width="40px">
                 </div>
-            <div class="cal">
-            <div class="cal__button"><button class="gray">C</button></div>
-            <div class="cal__button"><button  class="gray">+/-</button></div>
-            <div class="cal__button"><button  class="gray">%</button></div>
-            <div class="cal__button "><button  class="oper">÷</button></div>
-            <div class="cal__button"><button>7</button></div>
-            <div class="cal__button"><button>8</button></div>
-            <div class="cal__button"><button>9</button></div>
-            <div class="cal__button"><button  class="oper">x</button></div>
-            <div class="cal__button"><button>4</button></div>
-            <div class="cal__button"><button>5</button></div>
-            <div class="cal__button"><button>6</button></div>
-            <div class="cal__button"><button  class="oper">-</button></div>
-            <div class="cal__button"><button>1</button></div>
-            <div class="cal__button"><button>2</button></div>
-            <div class="cal__button"><button>3</button></div>
-            <div class="cal__button"><button  class="oper">+</button></div>
-            <div class="cal__button"><button>0</button></div>
-            <div class="cal__button"><button>.</button></div>
-            <div class="cal__button"><button  class="oper">=</button></div>
+                <div id="display">0</div>
+            <div class="cal">  
+            <div class="cal__button"><button id="button" class="gray">C</button></div>
+            <div class="cal__button"><button id="button" class="gray">+/-</button></div>
+            <div class="cal__button"><button  id="button"  class="gray">%</button></div>
+            <div class="cal__button "><button  id="button" class="oper">÷</button></div>
+            <div class="cal__button"><button  id="button">7</button></div>
+            <div class="cal__button"><button  id="button">8</button></div>
+            <div class="cal__button"><button  id="button">9</button></div>
+            <div class="cal__button"><button  id="button"  class="oper">x</button></div>
+            <div class="cal__button"><button  id="button">4</button></div>
+            <div class="cal__button"><button  id="button">5</button></div>
+            <div class="cal__button"><button  id="button">6</button></div>
+            <div class="cal__button"><button  id="button" class="oper">-</button></div>
+            <div class="cal__button"><button  id="button">1</button></div>
+            <div class="cal__button"><button  id="button">2</button></div>
+            <div class="cal__button"><button  id="button">3</button></div>
+            <div class="cal__button"><button  id="button" class="oper">+</button></div>
+            <div class="cal__button"><button  id="button">0</button></div>
+            <div class="cal__button"><button  id="button">.</button></div>
+            <div class="cal__button"><button  id="button" class="oper">=</button></div>
             </div>
             </div>
-            <div id="footnote">sorry,out of order</div>
             <script>
-                document.addEventListener("DOMContentLoaded", function () {
-                  let totalClicks = 0;
-                  const calculatorElement = document.getElementById("calculator");
-                  const footnoteElement = document.getElementById("footnote");
-                  calculatorElement.addEventListener("click", function() {
-                    totalClicks++;
-                    if(totalClicks == 1) {
-                        footnoteElement.innerText = "even if you click this it's still out of order";
-                    } else {
-                        footnoteElement.innerText = "even if you click " + totalClicks + "times, out of order is still out of order";
-                    }
+                document.addEventListener("DOMContentLoaded", () => {
+                  const display = document.getElementById("display");
+                  const buttons = document.querySelectorAll("button");
+                  let displayValue = "";
+                    buttons.forEach(button => {
+                        button.addEventListener("click", () => {
+                            const value = button.textContent;
+                            if (value == "C") {
+                                displayValue = "0";
+                            } else {
+                                if (displayValue == "0") {
+                                    displayValue = value;
+                                } else {
+                                    displayValue += value;
+                                }
+                            }
+                            display.textContent = displayValue;
+                        });
+                    });
                   });
-                });
             </script>
     </body>
 </html>
