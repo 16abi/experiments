@@ -20,7 +20,7 @@
             <div class="cal__button"><button  id="button">7</button></div>
             <div class="cal__button"><button  id="button">8</button></div>
             <div class="cal__button"><button  id="button">9</button></div>
-            <div class="cal__button"><button  id="button"  class="oper">x</button></div>
+            <div class="cal__button"><button  id="button"  class="oper">×</button></div>
             <div class="cal__button"><button  id="button">4</button></div>
             <div class="cal__button"><button  id="button">5</button></div>
             <div class="cal__button"><button  id="button">6</button></div>
@@ -34,27 +34,6 @@
             <div class="cal__button"><button  id="button" class="oper">=</button></div>
             </div>
             </div>
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                  const display = document.getElementById("display");
-                  const buttons = document.querySelectorAll("button");
-                  let displayValue = "";
-                    buttons.forEach(button => {
-                        button.addEventListener("click", () => {
-                            const value = button.textContent;
-                            if (value == "C") {
-                                displayValue = "0";
-                            } else {
-                                if (displayValue == "0") {
-                                    displayValue = value;
-                                } else {
-                                    displayValue += value;
-                                }
-                            }
-                            display.textContent = displayValue;
-                        });
-                    });
-                  });
-            </script>
+            <script src="cal.js"></script>
     </body>
 </html>
