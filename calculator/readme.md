@@ -13,14 +13,13 @@
    b. If another operator is clicked after some input,compute result and then apply new operation
 
 #How to handle each case:
-1.a. update currentNum (currentNum = currentNum * 10 + newDigit)
-     e.g., currentNum = 4, newDigit = 5 ( 4 * 10 + 5 = 45)  
+1.a. update currentNum ```currentNum = currentNum * 10 + newDigit``` ,e.g., currentNum = 4, newDigit = 5 ( 4 * 10 + 5 = 45)  
   b. store number in a variable called currentNum
 2.a. Reset all variables:
-         currentNum = 0, prevNum = null, operation = null, display = ''
+    ``` currentNum = 0, prevNum = null, operation = null, display = '' ```
 3.a. result = performOperation(prevNum, currentNum, operation)
   b. display the result
-  c. currentNum = result, continues next operation
+  c. ``` currentNum = result, continues next operation```
 4.a. preNum ,operator, currentNum 
   b. previous operation result( preNum = result) then,
      operation = operator clicked and then,
