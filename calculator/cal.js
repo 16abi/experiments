@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
           }
         }
 
-        else if (value == '+' || value == '-' || value == '×' || value == '÷') {
+        else if (value == '+' || value == '-' || value == '×' || value == '÷') {  
             if(currentNum == '')
                 return;
             prevNum = currentNum;
