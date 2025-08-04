@@ -6,7 +6,7 @@ body{
 
 h1{
     font-size: 36px;
-    text-align: center;
+    
 }
 
 
@@ -14,6 +14,8 @@ h1{
     h1{
       font-size: 24px;
       text-align: left;
+      padding-top: 250px;
+      padding-left: 40px;
     }
 }
 
@@ -21,8 +23,13 @@ li{
     font-size: 24px;
 }
 
+ul{
+    list-style-position: inside;
+}
+
 @media (max-width: 600px) {
     li{
         font-size: 12px;
+        padding-left: 40px;
     }
 }
